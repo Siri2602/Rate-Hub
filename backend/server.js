@@ -25,7 +25,7 @@ app.use(helmet({ crossOriginResourcePolicy: { policy: 'cross-origin' } }));
 app.use(cors({
   origin: [
     process.env.CLIENT_URL || 'http://localhost:5173',
-    'https://ratehub.vercel.app',
+    'https://ratehub-frontend-98506yxg1-siri-surya-s-projects.vercel.app',
   ],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
