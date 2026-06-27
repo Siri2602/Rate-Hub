@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'https://ratehub-backend-knt7.onrender.com/api';
+const API_URL = 'https://ratehub-backend-knt7.onrender.com';
 
 const api = axios.create({
   baseURL: API_URL,
