@@ -29,7 +29,7 @@ export const passwordSchema = z
   .regex(/[^A-Za-z0-9]/, 'Password must contain at least one special character');
 
 export const registerSchema = z.object({
-  name: z.string().min(20, 'Name must be at least 20 characters').max(60, 'Name must be at most 60 characters'),
+  name: z.string().min(1, 'Name must be at least 1 characters').max(60, 'Name must be at most 60 characters'),
   email: z.string().email('Invalid email address'),
   address: z.string().min(5, 'Address is required').max(400, 'Address too long'),
   password: passwordSchema,
@@ -42,7 +42,7 @@ export const loginSchema = z.object({
 });
 
 export const storeSchema = z.object({
-  name: z.string().min(20, 'Store name must be at least 20 characters').max(60, 'Store name must be at most 60 characters'),
+  name: z.string().min(1, 'Store name must be at least 1 characters').max(60, 'Store name must be at most 60 characters'),
   email: z.string().email('Invalid email'),
   address: z.string().min(5, 'Address required').max(400, 'Address too long'),
   ownerId: z.string().optional().nullable(),
