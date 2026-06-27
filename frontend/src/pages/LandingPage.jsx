@@ -149,19 +149,37 @@ const LandingPage = () => {
           {/* Floating store cards */}
           <div className="relative mt-40 hidden md:block">
             {[
-              { name: 'TechMart', rating: 4.8, reviews: 234, left: '0%' , bottom: '60%'},
-              { name: 'BookNook', rating: 4.5, reviews: 89, left: '50%' ,down:'20%'},
-              { name: 'FreshGrocer', rating: 4.2, reviews: 412, left: '75%' ,down:'20%'},
+              { name: 'TechMart', rating: 4.8, reviews: 234, left: '0%' , bottom: '30%'},
+              { name: 'BookNook', rating: 4.5, reviews: 89, left: '35%' ,bottom:'30%'},
+              { name: 'FreshGrocer', rating: 4.2, reviews: 412, left: '70%' ,bottom:'30%'},
             ].map((s, i) => (
               <motion.div
-                key={i}
-                className="absolute bottom-16 card p-4 w-48 shadow-card-hover"
-                style={{ left: s.left, transform: 'translateX(-50%)' }}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.7 + i * 0.15 }}
-                whileHover={{ y: -4 }}
-              >
+  key={i}
+  className="absolute card p-4 w-48 shadow-card-hover"
+  style={{
+    left: s.left,
+    bottom: s.bottom,
+    transform: "translateX(-50%)",
+  }}
+  initial={{ opacity: 0, y: 20 }}
+  animate={{
+    opacity: 1,
+    y: [0, -10, 0], // Floating animation
+  }}
+  transition={{
+    opacity: { duration: 0.5, delay: 0.7 + i * 0.15 },
+    y: {
+      duration: 3 + i * 0.5, // Different speed for each card
+      repeat: Infinity,
+      repeatType: "reverse",
+      ease: "easeInOut",
+    },
+  }}
+  whileHover={{
+    scale: 1.05,
+    transition: { duration: 0.2 },
+  }}
+>
                 <div className="flex items-center gap-2 mb-2">
                   <span className="text-xl">🏪</span>
                   <span className="font-semibold text-sm text-gray-900 dark:text-dark-text">{s.name}</span>
@@ -174,7 +192,7 @@ const LandingPage = () => {
 
           {/* Scroll indicator */}
           <motion.div
-            className="absolute bottom-6 left-1/2 -translate-x-1/2"
+            className="absolute bottom--8  left-1/2 -translate-x-1/2"
             animate={{ y: [0, 8, 0] }}
             transition={{ repeat: Infinity, duration: 2 }}
           >
