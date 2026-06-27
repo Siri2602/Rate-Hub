@@ -119,7 +119,7 @@ npm run dev
 ```bash
 cd frontend
 cp .env.example .env
-# Set VITE_API_URL=http://localhost:5000/api
+# Set VITE_API_URL=http://localhost:5001/api
 npm install
 npm run dev
 ```
@@ -142,7 +142,7 @@ CLIENT_URL="http://localhost:5173"
 
 ### Frontend `.env`
 ```env
-VITE_API_URL=http://localhost:5000/api
+VITE_API_URL=http://localhost:5001/api
 ```
 
 ---
