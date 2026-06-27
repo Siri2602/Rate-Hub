@@ -12,7 +12,7 @@ import PageTransition from '../../components/ui/PageTransition';
 import { ROLES } from '../../utils/helpers';
 
 const schema = z.object({
-  name: z.string().min(20, 'Name must be at least 20 characters').max(60, 'Name must be at most 60 characters'),
+  name: z.string().min(1, 'Name must be at least 1 characters').max(60, 'Name must be at most 60 characters'),
   email: z.string().email('Enter a valid email'),
   address: z.string().min(5, 'Address is required').max(400, 'Address too long'),
   password: z
@@ -143,7 +143,7 @@ const RegisterPage = () => {
 
               {/* Name */}
               <div>
-                <label className="label">Full Name <span className="text-gray-400 text-xs">(20–60 chars)</span></label>
+                <label className="label">Full Name <span className="text-gray-400 text-xs">(1–60 chars)</span></label>
                 <input {...register('name')} type="text" placeholder="Your full name" className={inputClass('name')} />
                 {errors.name && <p className="text-xs text-danger mt-1">{errors.name.message}</p>}
               </div>

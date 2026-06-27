@@ -147,15 +147,15 @@ const LandingPage = () => {
           </motion.div>
 
           {/* Floating store cards */}
-          <div className="relative mt-16 hidden md:block">
+          <div className="relative mt-40 hidden md:block">
             {[
-              { name: 'TechMart', rating: 4.8, reviews: 234, left: '0%' },
-              { name: 'BookNook', rating: 4.5, reviews: 89, left: '50%' },
-              { name: 'FreshGrocer', rating: 4.2, reviews: 412, left: '75%' },
+              { name: 'TechMart', rating: 4.8, reviews: 234, left: '0%' , bottom: '60%'},
+              { name: 'BookNook', rating: 4.5, reviews: 89, left: '50%' ,down:'20%'},
+              { name: 'FreshGrocer', rating: 4.2, reviews: 412, left: '75%' ,down:'20%'},
             ].map((s, i) => (
               <motion.div
                 key={i}
-                className="absolute bottom-0 card p-4 w-48 shadow-card-hover"
+                className="absolute bottom-16 card p-4 w-48 shadow-card-hover"
                 style={{ left: s.left, transform: 'translateX(-50%)' }}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}

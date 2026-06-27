@@ -14,7 +14,7 @@ import { z } from 'zod';
 import { ROLES } from '../../utils/helpers';
 
 const userSchema = z.object({
-  name: z.string().min(20, 'Min 20 chars').max(60, 'Max 60 chars'),
+  name: z.string().min(1, 'Min 1 chars').max(60, 'Max 60 chars'),
   email: z.string().email('Valid email required'),
   address: z.string().min(5).max(400),
   role: z.enum([ROLES.ADMIN, ROLES.STORE_OWNER, ROLES.USER]),

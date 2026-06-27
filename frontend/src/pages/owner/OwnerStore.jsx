@@ -10,7 +10,7 @@ import PageTransition from '../../components/ui/PageTransition';
 import { StarDisplay } from '../../components/ui/RatingStars';
 
 const schema = z.object({
-  name: z.string().min(20, 'Min 20 chars').max(60, 'Max 60 chars'),
+  name: z.string().min(1, 'Min 1 chars').max(60, 'Max 60 chars'),
   email: z.string().email('Valid email required'),
   address: z.string().min(5).max(400),
 });
